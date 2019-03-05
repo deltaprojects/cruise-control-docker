@@ -15,6 +15,7 @@ if [ ! -f /target/cruise-control-${VERSION}/kafka-cruise-control-start.sh ]; the
   cp -a cruise-control-core/build/libs /target/cruise-control-${VERSION}/cruise-control-core/build && \
   cp -a config /target/cruise-control-${VERSION} && \
   cp -a kafka-cruise-control-start.sh /target/cruise-control-${VERSION} && \
+  curl -JL https://github.com/linkedin/cruise-control-ui/releases/latest/download/cruise-control-ui.tar.gz | tar xzf - -C /target/cruise-control-${VERSION} && \
   cd && apk del .build-dependencies && rm -rf /tmp/cruise-control-${VERSION}
 fi
 
