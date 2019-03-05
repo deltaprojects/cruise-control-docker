@@ -18,4 +18,4 @@ if [ ! -f /target/cruise-control-${VERSION}/kafka-cruise-control-start.sh ]; the
   cd && apk del .build-dependencies && rm -rf /tmp/cruise-control-${VERSION}
 fi
 
-/target/cruise-control-${VERSION}/kafka-cruise-control-start.sh config/cruisecontrol.properties ${PORT}
+/target/cruise-control-${VERSION}/kafka-cruise-control-start.sh /etc/cruise-control/cruisecontrol.properties ${PORT}

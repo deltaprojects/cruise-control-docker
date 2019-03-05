@@ -4,7 +4,7 @@ This is a docker image that will build and run Cruise Control on first run and t
 
 ### Instructions
 You should specify a VERSION environment variable to match cruise control releases.
-You should volume/bind mount a [configuration directory](https://github.com/linkedin/cruise-control/tree/master/config) to /etc/cruise-control/ (don't forget trailing slash since this is symlink to another path) with your own configuration files.
+You should volume/bind mount a [configuration directory](https://github.com/linkedin/cruise-control/tree/master/config) to /etc/cruise-control with your own configuration files (cruisecontrol.properties and capacity.json).
 
 ###### Example
 
@@ -15,5 +15,5 @@ docker pull deltaprojects/cruise-control:latest
 
 Run container:
 ```
-docker run -e "VERSION=0.1.38" -v /etc/cruise-control:/etc/cruise-control/ deltaprojects/cruise-control:latest
+docker run -e "VERSION=0.1.38" -v /etc/cruise-control:/etc/cruise-control deltaprojects/cruise-control:latest
 ```

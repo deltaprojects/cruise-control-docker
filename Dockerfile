@@ -5,10 +5,10 @@ ENV PORT 9090
 
 EXPOSE 9090/tcp
 
-RUN apk add --no-cache bash && ln -s /target/cruise-control-${VERSION}/config /etc/cruise-control
+RUN apk add --no-cache bash
 
 ADD run.sh /run.sh
 
-VOLUME /target
+VOLUME /etc/cruise-control
 
 CMD /run.sh
