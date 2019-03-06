@@ -16,7 +16,7 @@ if [ ! -f /target/cruise-control-${VERSION}/kafka-cruise-control-start.sh ]; the
   cp -a config /target/cruise-control-${VERSION} && \
   cp -a kafka-cruise-control-start.sh /target/cruise-control-${VERSION} && \
   curl -JL https://github.com/linkedin/cruise-control-ui/releases/latest/download/cruise-control-ui.tar.gz |
-  tar xzvf - -C /target --strip-components 1 --include='*/dist/*' && \
+  tar xzvf - -C /target --strip-components 1 --exclude '*/README.txt' && \
   mv /target/dist /target/cruise-control-ui && \
   cd && apk del .build-dependencies && rm -rf /tmp/cruise-control-${VERSION}
 fi
