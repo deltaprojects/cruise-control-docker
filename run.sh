@@ -27,4 +27,8 @@ if [ -f /etc/cruise-control/ui-config.csv ]; then
   rm -f /target/cruise-control-ui/static/config.csv && ln -s /etc/cruise-control/ui-config.csv /target/cruise-control-ui/static/config.csv
 fi
 
+if [ -f /etc/cruise-control/cruise_control_jaas.conf ]; then
+  ln -sf /etc/cruise-control/cruise_control_jaas.conf /target/cruise-control-${VERSION}/config/cruise_control_jaas.conf
+fi
+
 /target/cruise-control-${VERSION}/kafka-cruise-control-start.sh /etc/cruise-control/cruisecontrol.properties ${PORT}
